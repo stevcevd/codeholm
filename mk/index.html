@@ -10,6 +10,8 @@
 <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('nLs59tG4Pq7xxwjge');</script>
 <link rel="alternate" hreflang="en" href="https://codeholm.com/">
 <link rel="alternate" hreflang="mk" href="https://codeholm.com/mk/">
 <style>
@@ -259,12 +261,12 @@ footer{background:var(--navy2);color:rgba(255,255,255,.6);padding:48px 24px 32px
 <section class="hero">
   <div class="hero-inner inner">
     <div>
-      <div class="hero-tag">Веб-страници</div>
+      <div class="hero-tag">Агенција за веб-страници</div>
       <h1>Дигиталното решение за <em>вашиот бизнис</em></h1>
       <p class="hero-sub">Од обична деловна страница до портал за вработени — брзо, по разумна цена. Без врзување за платформа. Без непотребни додатоци.</p>
       <div class="hero-btns">
         <a href="#pricing" class="btn-primary" style="font-size:.82rem;">Погледни цени и пакети</a>
-        <a href="#" class="btn-ghost" style="font-size:.82rem;" onclick="openModal();return false;">Бесплатна демонстрација</a>
+        <a href="#" class="btn-ghost" style="font-size:.82rem;" onclick="openModal();return false;">Бесплатно демонстрација</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -668,8 +670,24 @@ function submitForm(){
   const email=document.getElementById('femail').value.trim();
   const biz=document.getElementById('fbiz').value.trim();
   if(!name||!email||!biz){alert('Ве молиме пополнете го вашето ime, ime на бизнисот и е-пошта.');return;}
-  document.getElementById('demoForm').style.display='none';
-  document.getElementById('formSuccess').style.display='block';
+  const btn=document.querySelector('.form-submit');
+  btn.disabled=true;
+  btn.textContent='Се испраќа…';
+  emailjs.send('service_3wekwco','template_iqnqqcw',{
+    from_name:name,
+    business_name:biz,
+    from_email:email,
+    business_type:document.getElementById('ftype').value||'—',
+    plan:document.getElementById('fplan').value||'—',
+    message:document.getElementById('fmsg').value.trim()||'—'
+  }).then(()=>{
+    document.getElementById('demoForm').style.display='none';
+    document.getElementById('formSuccess').style.display='block';
+  }).catch(()=>{
+    alert('Нешто тргна наопаку. Обидете се повторно или контактирајте не директно.');
+    btn.disabled=false;
+    btn.textContent='Испрати барање →';
+  });
 }
 function toggleFeatures(btn){btn.classList.toggle('open');btn.nextElementSibling.classList.toggle('open');}
 function toggleUsecase(btn){const c=btn.nextElementSibling;c.classList.toggle('open');btn.style.color=c.classList.contains('open')?'var(--cyan2)':'';}
