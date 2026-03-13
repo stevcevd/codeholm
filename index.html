@@ -10,6 +10,8 @@
 <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('nLs59tG4Pq7xxwjge');</script>
 <style>
 :root {
   --bg:       #e8f2f8;
@@ -1076,7 +1078,7 @@ function closeModalOutside(e){
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
-// FORM SUBMIT (no backend — just shows success)
+// FORM SUBMIT — EmailJS
 function submitForm(){
   const name=document.getElementById('fname').value.trim();
   const email=document.getElementById('femail').value.trim();
@@ -1085,8 +1087,24 @@ function submitForm(){
     alert('Please fill in your name, business name, and email.');
     return;
   }
-  document.getElementById('demoForm').style.display='none';
-  document.getElementById('formSuccess').style.display='block';
+  const btn=document.querySelector('.form-submit');
+  btn.disabled=true;
+  btn.textContent='Sending…';
+  emailjs.send('service_3wekwco','template_iqnqqcw',{
+    from_name:name,
+    business_name:biz,
+    from_email:email,
+    business_type:document.getElementById('ftype').value||'—',
+    plan:document.getElementById('fplan').value||'—',
+    message:document.getElementById('fmsg').value.trim()||'—'
+  }).then(()=>{
+    document.getElementById('demoForm').style.display='none';
+    document.getElementById('formSuccess').style.display='block';
+  }).catch(()=>{
+    alert('Something went wrong. Please try again or email us directly.');
+    btn.disabled=false;
+    btn.textContent='Send request →';
+  });
 }
 
 // PLAN FEATURES TOGGLE
