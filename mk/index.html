@@ -644,7 +644,7 @@ footer{background:var(--navy2);color:rgba(255,255,255,.6);padding:48px 24px 32px
         </div>
         <div class="form-group">
           <label>Линк од ваша страница на социјален медиум </label>
-          <input type="email" id="femail" placeholder="Фејсбук, инстаграм или друго">
+          <input type="email" id="fsocial" placeholder="Фејсбук, инстаграм или друго">
         </div>
         <div class="form-group">
           <label>Кажете ни малку за тоа што ви треба</label>
@@ -682,6 +682,7 @@ function submitForm(){
     business_name:biz,
     from_email:email,
     business_type:document.getElementById('ftype').value||'—',
+    social:soc,
     plan:document.getElementById('fplan').value||'—',
     message:document.getElementById('fmsg').value.trim()||'—'
   }).then(()=>{
