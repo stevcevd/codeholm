@@ -673,6 +673,7 @@ function submitForm(){
   const name=document.getElementById('fname').value.trim();
   const email=document.getElementById('femail').value.trim();
   const biz=document.getElementById('fbiz').value.trim();
+  const soc=document.getElementById ('fsocial').value.trim ();
   if(!name||!email||!biz){alert('Ве молиме пополнете го вашето ime, ime на бизнисот и е-пошта.');return;}
   const btn=document.querySelector('.form-submit');
   btn.disabled=true;
