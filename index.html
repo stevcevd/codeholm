@@ -1039,7 +1039,7 @@ footer{
         </div>
         <div class="form-group">
           <label>Link to your social media page or post </label>
-          <input type="email" id="femail" placeholder="Instagram, Facebook or other">
+          <input type="email" id="fsocial" placeholder="Instagram, Facebook or other">
         </div>
         <div class="form-group">
           <label>Tell us a bit about what you need</label>
@@ -1087,6 +1087,7 @@ function submitForm(){
   const name=document.getElementById('fname').value.trim();
   const email=document.getElementById('femail').value.trim();
   const biz=document.getElementById('fbiz').value.trim();
+  const soc=document.getElementById('fsocial').value.trim();
   if(!name||!email||!biz){
     alert('Please fill in your name, business name, and email.');
     return;
@@ -1100,6 +1101,7 @@ function submitForm(){
     from_email:email,
     business_type:document.getElementById('ftype').value||'—',
     plan:document.getElementById('fplan').value||'—',
+    social:soc,
     message:document.getElementById('fmsg').value.trim()||'—'
   }).then(()=>{
     document.getElementById('demoForm').style.display='none';
