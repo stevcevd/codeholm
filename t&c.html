@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions — Codeholm</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+:root {
+  --bg:     #e8f2f8;
+  --bg2:    #ddeaf4;
+  --navy:   #1e3a5f;
+  --navy2:  #16304f;
+  --blue:   #2e6da4;
+  --cyan:   #3ab5e5;
+  --cyan2:  #25a0d0;
+  --white:  #ffffff;
+  --text:   #1e3a5f;
+  --muted:  #5a7a99;
+  --rule:   #c5d8e8;
+  --shadow: rgba(30,58,95,.12);
+  --radius: 12px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(232,242,248,.92);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);padding:0 24px;
+}
+.nav-inner{
+  max-width:900px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;height:64px;
+}
+.nav-logo{
+  font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;
+  color:var(--navy);text-decoration:none;letter-spacing:-.02em;
+}
+.nav-logo span{color:var(--cyan2);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-home{
+  font-size:.85rem;font-weight:500;color:var(--muted);
+  text-decoration:none;transition:color .2s;
+}
+.nav-home:hover{color:var(--navy);}
+.lang-btn{
+  border:1.5px solid var(--rule);background:transparent;
+  color:var(--muted);font-family:'DM Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;padding:7px 16px;border-radius:8px;
+  text-decoration:none;transition:all .2s;
+}
+.lang-btn:hover{border-color:var(--cyan);color:var(--navy);}
+
+/* HERO */
+.hero{
+  padding:110px 24px 64px;
+  background:var(--bg2);border-bottom:1px solid var(--rule);
+}
+.hero-inner{max-width:900px;margin:0 auto;}
+.sec-label{
+  font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--cyan2);margin-bottom:12px;
+  display:flex;align-items:center;gap:10px;
+}
+.sec-label::before{content:'';width:24px;height:2px;background:var(--cyan);}
+h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2.2rem,5vw,3.2rem);
+  line-height:1.08;letter-spacing:-.02em;
+  color:var(--navy);margin-bottom:16px;
+}
+.hero-meta{
+  display:flex;gap:28px;flex-wrap:wrap;
+  font-family:'DM Mono',monospace;font-size:.72rem;
+  color:var(--muted);letter-spacing:.06em;margin-top:18px;
+}
+.hero-meta span{display:flex;align-items:center;gap:6px;}
+.hero-meta span::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);}
+
+/* CONTENT */
+.wrapper{max-width:900px;margin:0 auto;padding:56px 24px 100px;}
+
+.divider{
+  height:1px;
+  background:linear-gradient(90deg,var(--cyan) 0%,var(--rule) 40%,transparent 100%);
+  margin:48px 0;
+}
+
+section{margin-bottom:52px;}
+
+h2{
+  font-family:'Fraunces',serif;font-size:1.45rem;
+  font-weight:600;color:var(--navy);
+  letter-spacing:-.01em;margin-bottom:16px;
+  padding-bottom:10px;border-bottom:1px solid var(--rule);
+}
+
+p{margin-bottom:14px;color:var(--text);font-size:.93rem;line-height:1.8;}
+
+ul{padding-left:0;list-style:none;margin:12px 0 16px;}
+ul li{
+  padding-left:22px;position:relative;
+  margin-bottom:10px;color:var(--text);font-size:.93rem;line-height:1.7;
+}
+ul li::before{
+  content:'→';position:absolute;left:0;
+  color:var(--cyan2);font-family:'DM Mono',monospace;font-size:.75rem;
+}
+
+a{color:var(--blue);}
+a:hover{color:var(--navy);}
+
+/* FOOTER */
+footer{
+  background:var(--navy2);color:rgba(255,255,255,.55);
+  padding:36px 24px;
+}
+.footer-inner{
+  max-width:900px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-inner p{font-size:.78rem;font-family:'DM Mono',monospace;margin:0;}
+.footer-inner a{color:var(--cyan);text-decoration:none;}
+.footer-inner a:hover{text-decoration:underline;}
+
+@media(max-width:600px){
+  .nav-inner{padding:0;}
+  .hero{padding:100px 20px 48px;}
+  .wrapper{padding:40px 20px 80px;}
+  .footer-inner{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://codeholm.com">Code<span>holm</span></a>
+    <div class="nav-right">
+      <a class="nav-home" href="https://codeholm.com">← Home</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="sec-label">Legal Document</div>
+    <h1>Terms &amp; Conditions</h1>
+    <div class="hero-meta">
+      <span>Effective: March 14, 2026</span>
+      <span>Service: Codeholm</span>
+      <span>contact@codeholm.com</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="divider"></div>
+
+  <section>
+    <h2>Introduction and Acceptance of Terms</h2>
+    <p>These Terms and Conditions ("Agreement") constitute a legally binding contract between Codeholm, a digital agency and freelance service ("Codeholm", "we", "us", "our"), and any individual, company, organisation, or other legal entity ("Client", "you", "your") that engages, accesses, or makes use of the services offered by Codeholm. This Agreement governs the entirety of the relationship between Codeholm and the Client from the point of initial contact through to the completion, termination, or expiry of any engagement.</p>
+    <p>By engaging Codeholm's services in any capacity — including but not limited to submitting an enquiry, attending a demonstration, signing a proposal, making a payment, granting access to systems or accounts, or communicating approval to proceed — the Client acknowledges that they have read, understood, and agree to be fully bound by these Terms and Conditions without modification, qualification, or reservation. If the Client does not agree with any part of this Agreement, they must not engage Codeholm's services.</p>
+    <p>If the Client is entering into this Agreement on behalf of a company, partnership, trust, or other legal entity, the individual doing so represents and warrants that they have full legal authority to bind that entity to these terms. In such cases, references to "Client" in this Agreement shall refer to the entity on whose behalf the individual is acting. Codeholm reserves the right to request written confirmation of such authority at any point during the engagement.</p>
+    <p>This Agreement is to be read in conjunction with any project-specific proposals, briefs, statements of work, invoices, or supplemental contracts issued by Codeholm. Where a conflict exists between this Agreement and any such supplementary document, the supplementary document shall take precedence only to the extent necessary to resolve that specific conflict. All other provisions of this Agreement remain fully in force.</p>
+    <p>Codeholm reserves the right to amend, update, or replace this Agreement at any time. The most current version shall always be the governing document. Clients engaged in active projects at the time of an update will be notified via email or their designated communication channel. Continued engagement with Codeholm following notification of an update constitutes acceptance of the revised terms.</p>
+  </section>
+
+  <section>
+    <h2>Nature of Services</h2>
+    <p>Codeholm provides a range of digital agency and freelance services to both individual consumers and business clients. These services include, but are not limited to, web design, web development, front-end and back-end development, user interface and user experience design, branding and visual identity, digital strategy and consulting, content structuring, technical integrations, and any other creative or technical service agreed upon in writing between Codeholm and the Client prior to the commencement of work.</p>
+    <p>The precise scope of services for each individual engagement will be defined in a written proposal, creative brief, or statement of work. This document will outline the deliverables, estimated timelines, milestones, and any specific technical or creative requirements relevant to the project. No work will commence until both parties have confirmed the agreed scope in writing.</p>
+    <p>Codeholm operates primarily as a remote service provider. All design, development, and consulting work is conducted digitally, and deliverables are provided electronically unless explicitly agreed otherwise. Timelines and delivery dates communicated by Codeholm are estimates based on information available at the time of scoping and are not contractually guaranteed deadlines unless explicitly stated as such.</p>
+    <p>Codeholm reserves the right to engage qualified subcontractors or collaborators to assist in the delivery of services without requiring the Client's prior approval. Codeholm remains the responsible party for the quality and delivery of the final work product regardless of any subcontracting arrangements made. Codeholm does not provide legal, financial, medical, or compliance advice as part of its services. Clients are solely responsible for ensuring that their projects comply with all applicable laws, regulations, and industry standards in their respective jurisdictions.</p>
+  </section>
+
+  <section>
+    <h2>Demo, Approval, and Upfront Payment</h2>
+    <p>Prior to the commencement of any billable work, Codeholm will present the Client with a project demonstration, prototype, or representative sample of the proposed deliverable ("Demo"). The purpose of the Demo is to provide the Client with a clear understanding of the direction, scope, style, and technical approach that Codeholm intends to implement. The Demo may take the form of a live walkthrough, a recorded presentation, a static mockup, a wireframe, or any other format deemed appropriate by Codeholm given the nature of the project.</p>
+    <p>The Demo does not constitute a finished deliverable and is subject to change based on Client feedback, technical constraints, or revised requirements. Codeholm makes no warranty that the final deliverable will be identical to the Demo in every detail, though all reasonable efforts will be made to align the final output with the demonstrated direction. Minor variations in layout, typography, colour rendering, or interactive behaviour between the Demo and the final product do not constitute grounds for dispute, refund, or non-payment.</p>
+    <p>Following the presentation of the Demo, the Client is invited to review and provide consolidated feedback within the timeframe specified in the project agreement. Once the Client has reviewed the Demo and confirmed their intent to proceed — whether verbally, in writing, or by making payment — full payment for the agreed project fee is due upfront and in full before any further development, design, or production work is undertaken. No work will progress past the Demo stage until payment has been received and confirmed by Codeholm.</p>
+    <p>Upfront payment constitutes the Client's binding confirmation that they understand the scope of work, accept the demonstrated direction, and wish to proceed. By making payment, the Client waives any right to claim that they were unaware of the nature or scope of the services to be provided. Codeholm will issue a formal invoice upon the Client's confirmation to proceed, and payment must be settled within the timeframe stated on that invoice, which shall not exceed seven (7) calendar days unless otherwise agreed in writing.</p>
+    <p>In the event that the Client does not wish to proceed following the Demo, no payment is owed for the Demo itself unless the project agreement expressly states that the Demo is a paid deliverable. Should a paid Demo have been agreed upon, the fee for the Demo is non-refundable regardless of whether the Client chooses to continue with the project. Codeholm reserves the right to decline to provide a Demo where the project scope is clearly defined or where the nature of the work does not lend itself to a pre-production demonstration, in which case upfront payment may be requested directly upon agreement of the project scope.</p>
+  </section>
+
+  <section>
+    <h2>Payment Terms and Obligations</h2>
+    <p>All fees for services provided by Codeholm are agreed upon in the project proposal or statement of work and are payable in full upfront following the Client's decision to proceed after the Demo, as described above. No milestone-based or post-delivery payment arrangements are offered as a default. Any alternative payment structure must be explicitly agreed upon in writing by Codeholm prior to the commencement of work.</p>
+    <p>Invoices issued by Codeholm are payable within the timeframe stated on the invoice. Failure to settle an invoice within the specified timeframe will result in the suspension of all active work on the Client's project. Codeholm is not liable for any losses, delays, or missed opportunities experienced by the Client as a result of work suspension due to non-payment. Suspended work will resume only upon receipt of the outstanding payment in full.</p>
+    <p>All fees quoted by Codeholm are exclusive of any applicable taxes, levies, or government charges unless explicitly stated otherwise. Where value-added tax or equivalent taxation applies, this will be stated on the invoice and is payable in addition to the agreed service fee. The Client is responsible for any taxes applicable in their own jurisdiction, including withholding taxes where applicable.</p>
+    <p>Where a project requires the procurement of third-party services, licences, hosting, domains, fonts, stock media, or software subscriptions on behalf of the Client, Codeholm will communicate these costs in advance. Such costs are either billed directly to the Client or reimbursed to Codeholm at cost and are separate from Codeholm's service fees. Codeholm is not responsible for price fluctuations in third-party services after a quote has been issued.</p>
+    <p>Codeholm reserves the right to charge interest on overdue invoices at a rate of 1.5% per month or the maximum rate permitted by applicable law, whichever is lower, calculated from the invoice due date until the date of payment. Additionally, Codeholm reserves the right to recover reasonable legal and administrative costs incurred in pursuing overdue payments.</p>
+  </section>
+
+  <section>
+    <h2>No Refund Policy</h2>
+    <p>All payments made to Codeholm are strictly non-refundable. Once a payment has been processed and confirmed — whether in full or as part of any agreed instalment arrangement — that payment will not be returned to the Client under any circumstances, including but not limited to change of mind, project cancellation, dissatisfaction with the delivered work, failure to utilise the deliverables, business closure, or any other reason whatsoever.</p>
+    <p>This no-refund policy applies universally to all service fees, retainer fees, Demo fees where applicable, rush fees, consultation fees, and any other payments made to Codeholm in connection with any engagement. The Client acknowledges that upon making payment, they are committing to the engagement and accepting that the resources, time, and expertise allocated to their project cannot be recovered or redeployed once work has commenced.</p>
+    <p>Codeholm invests significant time, planning, creative effort, and technical resources into each project from the moment payment is received. The no-refund policy exists to protect Codeholm's legitimate business interests and to reflect the reality that the services provided are bespoke, labour-intensive, and cannot be resold or repurposed for another client in the event of a cancellation.</p>
+    <p>In the event that the Client is dissatisfied with any aspect of the work delivered, Codeholm commits to engaging in good-faith discussions with the Client to understand the nature of the dissatisfaction and to explore whether revisions or adjustments can be made within the agreed scope. The availability of this process does not imply any right to a refund, and any revisions offered are at Codeholm's sole discretion. Dissatisfaction with work that has been delivered in accordance with the agreed brief and demonstrated direction does not entitle the Client to a refund.</p>
+    <p>If the Client cancels a project after payment has been made, Codeholm will retain all payments received up to that point. Codeholm is not obligated to deliver any incomplete work to the Client upon cancellation, and any partial deliverables shared as a courtesy do not constitute a satisfactory completion of the project or reduce the amount owed.</p>
+    <p>In the rare and exceptional circumstance where Codeholm is entirely unable to deliver the agreed services due to causes solely and directly within Codeholm's control, Codeholm may, at its sole and absolute discretion, offer the Client a credit toward future services of equivalent value. This credit is not transferable, has no cash value, and does not constitute a refund.</p>
+  </section>
+
+  <section>
+    <h2>Revisions and Change Requests</h2>
+    <p>The number of revisions included in any project engagement will be specified in the project proposal or statement of work. Revisions are defined as reasonable adjustments made to a deliverable within the originally agreed scope. They do not include significant changes to the design direction, structural changes to a website or application, the addition of new features or pages, or requests that effectively constitute a new or expanded project. Any such requests will be scoped and quoted as additional work and are subject to a separate fee.</p>
+    <p>Revision requests must be submitted in a consolidated, written format within the review period specified in the project agreement. Codeholm does not accept revision requests communicated verbally unless they are subsequently confirmed in writing. Feedback provided in multiple rounds or in a piecemeal fashion may result in additional charges at Codeholm's discretion.</p>
+    <p>Once a deliverable has been approved — either explicitly in writing or implicitly through a period of inaction beyond the review deadline — it will be treated as accepted and final. Requests for changes following approval will be treated as new work and quoted accordingly. Where the Client requests changes that expand or materially alter the scope of the original project, Codeholm will issue a change request document outlining the nature of the changes, the additional cost, and the revised timeline. Work on the expanded scope will not begin until the change request has been approved and any additional fees have been paid.</p>
+  </section>
+
+  <section>
+    <h2>Intellectual Property and Ownership</h2>
+    <p>Upon receipt of full and final payment for a completed project, ownership of the agreed final deliverables as specified in the project scope will transfer to the Client. Until such time as full payment is received, all work product — including but not limited to designs, code, written content, visual assets, prototypes, and documentation — remains the sole intellectual property of Codeholm. Codeholm reserves the right to withhold delivery of any final files or credentials until payment has been confirmed in full.</p>
+    <p>Codeholm retains a non-exclusive, irrevocable, perpetual licence to display, reproduce, and reference any completed work in its portfolio, promotional materials, case studies, and marketing communications unless the Client has explicitly requested and received written confirmation of a confidentiality arrangement prior to the commencement of the project.</p>
+    <p>Third-party assets incorporated into a project — including typefaces, stock photography, plugins, software libraries, and frameworks — remain subject to the terms of their respective licences. It is the Client's responsibility to review and maintain those licences after project handover. Codeholm accepts no liability for any breach of third-party licence terms that occurs after delivery of the final project.</p>
+    <p>The Client warrants that all materials, content, images, logos, text, and data provided to Codeholm are either owned by the Client or used with full legal permission. The Client indemnifies Codeholm against any claims, damages, costs, or legal proceedings arising from the use of Client-provided materials that infringe the intellectual property rights or other rights of any third party.</p>
+  </section>
+
+  <section>
+    <h2>Client Responsibilities and Cooperation</h2>
+    <p>The Client agrees to provide Codeholm with all information, materials, access credentials, content, branding assets, and feedback that Codeholm reasonably requires to perform the services, within the timeframes specified in the project agreement. The Client accepts responsibility for the accuracy, completeness, and legality of all materials and information provided. If errors in the final deliverable are traceable to inaccurate or outdated information provided by the Client, any corrections required will be treated as revision requests subject to additional fees.</p>
+    <p>Where the Client fails to provide required materials, feedback, or approvals within a reasonable timeframe, Codeholm reserves the right to pause work on the project, revise the project timeline, and — where the delay is substantial — to treat the project as cancelled and retain all payments made to date. Codeholm will provide written notice of any intended suspension or cancellation.</p>
+    <p>The Client agrees to engage with Codeholm in a professional and respectful manner throughout the project. Codeholm reserves the right to terminate an engagement immediately and without refund in cases where the Client engages in abusive, harassing, threatening, or otherwise unacceptable behaviour toward Codeholm or any individuals associated with Codeholm.</p>
+  </section>
+
+  <section>
+    <h2>Limitation of Liability</h2>
+    <p>To the fullest extent permitted by applicable law, Codeholm and any subcontractors or collaborators engaged by Codeholm shall not be liable to the Client or any third party for any indirect, incidental, special, consequential, exemplary, or punitive damages of any kind, including but not limited to loss of revenue, loss of profit, loss of data, loss of anticipated savings, loss of business opportunity, loss of goodwill, reputational damage, or business interruption, arising out of or in connection with the services provided under this Agreement.</p>
+    <p>Codeholm does not guarantee that any website, application, or digital product delivered under this Agreement will achieve specific performance outcomes, traffic levels, conversion rates, search engine rankings, or business results. Digital products are subject to third-party platforms, algorithms, hosting environments, browser updates, and other factors entirely outside Codeholm's control.</p>
+    <p>Codeholm is not liable for any downtime, errors, data loss, or service interruptions caused by third-party hosting providers, domain registrars, payment processors, or any other external service integrated into or used in connection with the delivered product. Codeholm's total cumulative liability to the Client under this Agreement shall not exceed the total amount actually paid by the Client to Codeholm for the specific project giving rise to the claim. Nothing in this Agreement limits Codeholm's liability for fraud, wilful misconduct, or any other liability that cannot lawfully be excluded or limited under applicable law.</p>
+  </section>
+
+  <section>
+    <h2>Confidentiality</h2>
+    <p>Both parties acknowledge that in the course of this Agreement, they may be exposed to or receive information that is confidential or proprietary in nature. Each party agrees to treat such information with the same degree of care that it applies to its own confidential information and shall not disclose it to any third party without prior written consent, except as required by law or as necessary to fulfil the obligations of this Agreement.</p>
+    <p>Confidential information includes, but is not limited to, business strategies, financial data, client lists, technical specifications, source code, design files, and pricing. Information that is publicly known at the time of disclosure, or that becomes publicly known through no fault of the receiving party, is not considered confidential.</p>
+  </section>
+
+  <section>
+    <h2>Data and Privacy</h2>
+    <p>Codeholm collects and processes personal data solely for the purpose of delivering services and maintaining communication with the Client. Personal data collected may include name, email address, telephone number, company name, billing address, and project-related communications. Codeholm does not sell, rent, share, or otherwise disclose personal data to third parties except where strictly necessary to fulfil the agreed services or where required by law.</p>
+    <p>Upon written request, the Client may request access to, correction of, or deletion of their personal data by contacting Codeholm at <a href="mailto:contact@codeholm.com">contact@codeholm.com</a>. Codeholm will respond to such requests within a reasonable timeframe and in accordance with applicable law. Codeholm does not use Client personal data for unsolicited marketing or promotional communications without the Client's explicit prior consent.</p>
+  </section>
+
+  <section>
+    <h2>Governing Law and Dispute Resolution</h2>
+    <p>This Agreement, and any dispute, claim, or controversy arising out of or in connection with it, shall be governed by and construed in accordance with the laws of the Republic of North Macedonia. The parties agree that the courts of the Republic of North Macedonia shall have exclusive jurisdiction over any legal proceedings arising from or in connection with this Agreement.</p>
+    <p>Before initiating any formal legal proceedings, both parties commit to making a genuine and good-faith effort to resolve any dispute through direct negotiation. The party raising the dispute shall notify the other party in writing, clearly describing the nature of the dispute and the resolution sought. The parties shall endeavour to reach a mutually acceptable resolution within thirty (30) calendar days of such notification. The Client agrees that any claim arising under this Agreement must be brought within one (1) year of the date on which the cause of action arose.</p>
+  </section>
+
+  <section>
+    <h2>Force Majeure</h2>
+    <p>Codeholm shall not be held in breach of this Agreement, nor be liable for any failure or delay in the performance of its obligations, where such failure or delay results from causes beyond Codeholm's reasonable control. Such causes include but are not limited to natural disasters, pandemics, war, civil unrest, terrorism, government action, power outages, internet service disruptions, or failures of third-party platforms or infrastructure.</p>
+    <p>In the event of a force majeure occurrence, Codeholm will notify the Client as soon as reasonably practicable. Where a force majeure event continues for a period exceeding sixty (60) days, either party may elect to terminate the engagement by giving written notice to the other party. In such a case, the Client shall be entitled to a credit (not a refund) for any portion of paid work that was not completed, at Codeholm's reasonable assessment.</p>
+  </section>
+
+  <section>
+    <h2>Entire Agreement and Severability</h2>
+    <p>This Agreement, together with any project-specific proposals, statements of work, invoices, and supplementary contracts, constitutes the entire agreement between Codeholm and the Client with respect to the subject matter hereof and supersedes all prior discussions, representations, and agreements relating to the same subject matter.</p>
+    <p>If any provision of this Agreement is found to be invalid, unlawful, or unenforceable, that provision shall be deemed modified to the minimum extent necessary to make it valid and enforceable, or severed if modification is not possible. The invalidity of any provision shall not affect the validity of the remaining provisions. No failure or delay by Codeholm in exercising any right under this Agreement shall constitute a waiver of that right.</p>
+  </section>
+
+  <section>
+    <h2>Contact and Legal Notices</h2>
+    <p>All notices, requests, or other communications required under this Agreement shall be made in writing and directed to the contact details below. Notices sent by email shall be deemed received upon confirmation of delivery. Codeholm will endeavour to respond to all legal and contractual inquiries within five (5) business days of receipt.</p>
+    <p>For any questions, concerns, disputes, or legal inquiries regarding these Terms and Conditions or any engagement with Codeholm, please contact:</p>
+    <p><strong>Codeholm</strong><br>
+    Email: <a href="mailto:contact@codeholm.com">contact@codeholm.com</a><br>
+    Website: <a href="https://codeholm.com">codeholm.com</a></p>
+    <p>By engaging Codeholm's services, the Client confirms that they have had the opportunity to read and seek independent legal advice regarding these Terms and Conditions, that they understand the terms contained herein, and that they agree to be bound by them in their entirety.</p>
+  </section>
+
+  <div class="divider"></div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Codeholm. All rights reserved.</p>
+    <p><a href="https://codeholm.com">codeholm.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

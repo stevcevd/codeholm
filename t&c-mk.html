@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Услови и одредби — Општ договор</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:     #e8f2f8;
+  --bg2:    #ddeaf4;
+  --navy:   #1e3a5f;
+  --navy2:  #16304f;
+  --blue:   #2e6da4;
+  --cyan:   #3ab5e5;
+  --cyan2:  #25a0d0;
+  --white:  #ffffff;
+  --text:   #1e3a5f;
+  --muted:  #5a7a99;
+  --rule:   #c5d8e8;
+  --shadow: rgba(30,58,95,.12);
+  --radius: 12px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(232,242,248,.92);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);padding:0 24px;
+}
+.nav-inner{
+  max-width:900px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;height:64px;
+}
+.nav-logo{
+  font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;
+  color:var(--navy);text-decoration:none;letter-spacing:-.02em;
+}
+.nav-logo span{color:var(--cyan2);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-home{
+  font-size:.85rem;font-weight:500;color:var(--muted);
+  text-decoration:none;transition:color .2s;
+}
+.nav-home:hover{color:var(--navy);}
+.lang-btn{
+  border:1.5px solid var(--rule);background:transparent;
+  color:var(--muted);font-family:'DM Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;padding:7px 16px;border-radius:8px;
+  text-decoration:none;transition:all .2s;
+}
+.lang-btn:hover{border-color:var(--cyan);color:var(--navy);}
+
+/* HERO — CONTRACT HEADER */
+.hero{
+  padding:100px 24px 0;
+  background:var(--bg2);border-bottom:1px solid var(--rule);
+}
+.hero-inner{max-width:900px;margin:0 auto;padding-bottom:0;}
+
+.contract-header{
+  background:var(--white);border:1px solid var(--rule);
+  border-radius:var(--radius);padding:36px 40px 28px;
+  box-shadow:0 4px 24px var(--shadow);
+  margin-bottom:0;
+}
+
+.contract-title-row{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:24px;margin-bottom:28px;flex-wrap:wrap;
+}
+.contract-title-block{}
+.contract-doc-label{
+  font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--cyan2);margin-bottom:8px;
+  display:flex;align-items:center;gap:10px;
+}
+.contract-doc-label::before{content:'';width:24px;height:2px;background:var(--cyan);}
+.contract-title{
+  font-family:'Fraunces',serif;
+  font-size:clamp(1.6rem,4vw,2.4rem);
+  line-height:1.1;letter-spacing:-.02em;color:var(--navy);
+}
+.contract-num-block{
+  text-align:right;flex-shrink:0;
+}
+.contract-num-label{
+  font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:6px;
+}
+.blank-field{
+  display:inline-block;
+  border-bottom:2px solid var(--navy);
+  min-width:180px;height:24px;vertical-align:bottom;
+}
+.blank-field.sm{min-width:100px;}
+.blank-field.lg{min-width:260px;}
+
+.contract-parties{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+  border-top:1px solid var(--rule);padding-top:24px;margin-bottom:24px;
+}
+@media(max-width:580px){.contract-parties{grid-template-columns:1fr;}}
+
+.party-block{
+  background:var(--bg);border:1px solid var(--rule);
+  border-radius:10px;padding:18px 20px;
+}
+.party-role{
+  font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--cyan2);margin-bottom:10px;
+}
+.party-label{
+  font-size:.78rem;font-weight:600;color:var(--muted);
+  margin-bottom:4px;margin-top:10px;
+}
+.party-label:first-of-type{margin-top:0;}
+
+.contract-date-row{
+  display:flex;gap:32px;flex-wrap:wrap;
+  border-top:1px solid var(--rule);padding-top:20px;
+  font-size:.85rem;color:var(--muted);align-items:center;
+}
+.contract-date-row span{display:flex;align-items:center;gap:8px;}
+.contract-date-row strong{color:var(--navy);}
+
+.intro-note{
+  background:rgba(58,181,229,.08);border:1px solid rgba(58,181,229,.25);
+  border-left:3px solid var(--cyan);
+  border-radius:0 8px 8px 0;
+  padding:16px 20px;
+  font-size:.85rem;color:var(--blue);line-height:1.7;
+  margin:24px 0 0;
+}
+
+/* CONTENT */
+.wrapper{max-width:900px;margin:0 auto;padding:48px 24px 100px;}
+
+.divider{
+  height:1px;
+  background:linear-gradient(90deg,var(--cyan) 0%,var(--rule) 40%,transparent 100%);
+  margin:44px 0;
+}
+
+section{margin-bottom:48px;}
+
+.section-num{
+  font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--cyan2);margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+.section-num::before{content:'';width:16px;height:2px;background:var(--cyan);}
+
+h2{
+  font-family:'Fraunces',serif;font-size:1.4rem;
+  font-weight:600;color:var(--navy);
+  letter-spacing:-.01em;margin-bottom:16px;
+  padding-bottom:10px;border-bottom:1px solid var(--rule);
+}
+
+p{margin-bottom:14px;color:var(--text);font-size:.93rem;line-height:1.8;}
+
+ul{padding-left:0;list-style:none;margin:12px 0 16px;}
+ul li{
+  padding-left:22px;position:relative;
+  margin-bottom:10px;color:var(--text);font-size:.93rem;line-height:1.7;
+}
+ul li::before{
+  content:'→';position:absolute;left:0;
+  color:var(--cyan2);font-family:'DM Mono',monospace;font-size:.75rem;
+}
+
+/* PLAN BLANKS inside section */
+.plan-table{
+  width:100%;border-collapse:collapse;
+  margin:20px 0 16px;font-size:.88rem;
+}
+.plan-table th{
+  background:var(--navy);color:var(--white);
+  font-family:'DM Mono',monospace;font-size:.6rem;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:10px 14px;text-align:left;
+}
+.plan-table td{
+  padding:12px 14px;border-bottom:1px solid var(--rule);
+  vertical-align:middle;background:var(--white);
+}
+.plan-table tr:last-child td{border-bottom:none;}
+.plan-table td .blank-field{min-width:140px;}
+.plan-table td.label-col{
+  font-weight:600;color:var(--navy);width:36%;
+  background:var(--bg2);
+}
+
+a{color:var(--blue);}
+a:hover{color:var(--navy);}
+
+/* FOOTER */
+footer{
+  background:var(--navy2);color:rgba(255,255,255,.55);
+  padding:36px 24px;
+}
+.footer-inner{
+  max-width:900px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-inner p{font-size:.78rem;font-family:'DM Mono',monospace;margin:0;}
+.footer-inner a{color:var(--cyan);text-decoration:none;}
+.footer-inner a:hover{text-decoration:underline;}
+
+/* SIGNATURES */
+.sig-block{
+  display:grid;grid-template-columns:1fr 1fr;gap:32px;
+  margin-top:40px;
+}
+@media(max-width:580px){.sig-block{grid-template-columns:1fr;}}
+.sig-party{
+  border:1px solid var(--rule);border-radius:var(--radius);
+  padding:24px;background:var(--white);
+}
+.sig-party-label{
+  font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--cyan2);margin-bottom:16px;
+}
+.sig-row{margin-bottom:16px;}
+.sig-row label{
+  display:block;font-size:.75rem;font-weight:600;
+  color:var(--muted);margin-bottom:4px;
+}
+.sig-line{
+  display:block;width:100%;height:28px;
+  border-bottom:2px solid var(--navy);
+}
+
+@media(max-width:600px){
+  .hero{padding:90px 16px 0;}
+  .contract-header{padding:24px 20px 20px;}
+  .wrapper{padding:36px 16px 80px;}
+  .footer-inner{flex-direction:column;align-items:flex-start;}
+  .contract-num-block{text-align:left;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://codeholm.com">Code<span>holm</span></a>
+    <div class="nav-right">
+      <a class="nav-home" href="https://codeholm.com">← Почетна</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+
+    <div class="contract-header">
+      <div class="contract-title-row">
+        <div class="contract-title-block">
+          <div class="contract-doc-label">Правен документ</div>
+          <div class="contract-title">Услови и одредби<br>за давање на услуги</div>
+        </div>
+        <div class="contract-num-block">
+          <div class="contract-num-label">Договор бр.</div>
+          <span class="blank-field sm"></span>
+          <div class="contract-num-label" style="margin-top:12px;">Датум</div>
+          <span class="blank-field sm"></span>
+        </div>
+      </div>
+
+      <div class="contract-parties">
+        <div class="party-block">
+          <div class="party-role">Давател на услуги</div>
+          <div class="party-label">Назив / Ime и презиме</div>
+          <span class="blank-field lg"></span>
+          <div class="party-label">Правна форма (физичко / правно лице)</div>
+          <span class="blank-field"></span>
+          <div class="party-label">Адреса / Седиште</div>
+          <span class="blank-field lg"></span>
+          <div class="party-label">Е-маил за контакт</div>
+          <span class="blank-field"></span>
+        </div>
+        <div class="party-block">
+          <div class="party-role">Примател на услуги (Клиент)</div>
+          <div class="party-label">Назив / Ime и презиме</div>
+          <span class="blank-field lg"></span>
+          <div class="party-label">Правна форма (физичко / правно лице)</div>
+          <span class="blank-field"></span>
+          <div class="party-label">Адреса / Седиште</div>
+          <span class="blank-field lg"></span>
+          <div class="party-label">Е-маил за контакт</div>
+          <span class="blank-field"></span>
+        </div>
+      </div>
+
+      <div class="contract-date-row">
+        <span><strong>Датум на склучување:</strong> <span class="blank-field sm"></span></span>
+        <span><strong>Проект / Ангажман:</strong> <span class="blank-field"></span></span>
+      </div>
+
+      <div class="intro-note">
+        Овие Услови и одредби се применуваат при секој договор склучен помеѓу Давателот на услуги и Клиентот, освен ако поинаку не е договорено со посебен писмен договор. Со потпишување, вербално одобрување или извршување на плаќање, Клиентот потврдува дека ги прочитал, разбрал и ги прифаќа овие услови во целост.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="divider"></div>
+
+  <section>
+    <div class="section-num">01</div>
+    <h2>Вовед и прифаќање на услови</h2>
+    <p>Овие Услови и одредби („Договор") претставуваат правно обврзувачки договор помеѓу Давателот на услуги и Клиентот наведени на насловната страна на овој документ. Договорот ги уредува сите аспекти на односот помеѓу двете страни, од моментот на иницијален контакт до завршувањето, раскинувањето или истекувањето на ангажманот.</p>
+    <p>Со ангажирање на услугите на Давателот на кој и да е начин — вклучувајќи, но не ограничувајќи се на поднесување прашање, присуство на демонстрација, потпишување понуда, извршување плаќање или комуникација на одобрување за продолжување — Клиентот потврдува дека ги прочитал, разбрал и се согласува да биде целосно обврзан со овие Услови и одредби. Доколку Клиентот не се согласува со кој и да е дел од овој Договор, тој не смее да ги ангажира услугите.</p>
+    <p>Доколку Клиентот го склучува овој Договор во ime на компанија или друго правно лице, лицето кое го прави тоа изјавува и гарантира дека има целосно законско овластување да го обврзе тоа лице со овие услови. Давателот го задржува правото да бара писмена потврда за такво овластување во кое и да е време за времетраење на ангажманот.</p>
+    <p>Овој Договор се чита заедно со сите проектно-специфични понуди, брифови, изјави за опфат, фактури или дополнителни договори издадени од Давателот. Каде постои конфликт помеѓу овој Договор и кој и да е таков дополнителен документ, дополнителниот документ има предност само во мерка неопходна за решавање на тој специфичен конфликт. Давателот го задржува правото да го измени или ажурира овој Договор во кое и да е време со претходно известување на Клиентот.</p>
+  </section>
+
+  <section>
+    <div class="section-num">02</div>
+    <h2>Природа на услугите</h2>
+    <p>Давателот обезбедува дигитални агенциски и фриленс услуги, вклучувајќи, но не ограничувајќи се на: веб-дизајн, веб-развој, UI/UX дизајн, брендинг и визуелен идентитет, дигитален консалтинг, технички интеграции и секоја друга креативна или техничка услуга договорена во писмена форма пред почетокот на работата.</p>
+    <p>Точниот опфат на услугите за секој ангажман ќе биде дефиниран во писмена понуда или изјава за работа. Давателот работи примарно далечински и ги испорачува сите материјали електронски освен ако не е поинаку договорено. Роковите на испорака се проценки и не претставуваат гарантирани крајни рокови освен ако не е изречно наведено во проектниот договор.</p>
+    <p>Давателот не обезбедува правни, финансиски, медицински или советодавни услуги за усогласеност. Клиентот е исклучиво одговорен за осигурување на усогласеноста на неговиот проект со сите применливи закони и прописи во неговата јурисдикција.</p>
+  </section>
+
+  <section>
+    <div class="section-num">03</div>
+    <h2>Демонстрација, одобрување и услови за плаќање</h2>
+    <p>Пред почетокот на каква и да е наплатлива работа, Давателот ќе му претстави на Клиентот демонстрација на проектот, прототип или репрезентативен примерок на предложената испорака („Демо"). Целта на Демото е да му обезбеди на Клиентот јасно разбирање на насоката, опфатот и техничкиот пристап. Демото не претставува финална испорака и е предмет на промена.</p>
+    <p>По прегледот на Демото и потврдата на Клиентот за намера да продолжи, целото плаќање за договорената надоместина е должно <strong>однапред и во целост</strong> пред да биде преземена каква и да е понатамошна работа. Ниту една работа нема да напредува после фазата на Демото додека плаќањето не биде примено и потврдено.</p>
+    <p>За конкретниот ангажман опфатен со овој Договор, се применуваат следниве услови за плаќање:</p>
+
+    <table class="plan-table">
+      <thead>
+        <tr>
+          <th>Ставка</th>
+          <th>Детали</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label-col">Избран план / пакет</td>
+          <td><span class="blank-field"></span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Надоместок за поставување (еднократно)</td>
+          <td><span class="blank-field sm"></span> EUR / MKD</td>
+        </tr>
+        <tr>
+          <td class="label-col">Месечна надоместина за хостинг</td>
+          <td><span class="blank-field sm"></span> EUR / MKD &nbsp;— месечно</td>
+        </tr>
+        <tr>
+          <td class="label-col">Начин на плаќање</td>
+          <td><span class="blank-field"></span></td>
+        </tr>
+        <tr>
+          <td class="label-col">Рок за плаќање по испратена фактура</td>
+          <td><span class="blank-field sm"></span> календарски дена</td>
+        </tr>
+        <tr>
+          <td class="label-col">Дополнителни договорени ставки</td>
+          <td><span class="blank-field lg"></span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Сите цени се без вклучен данок на додадена вредност (ДДВ) освен ако не е изречно наведено поинаку. Доцнењето со плаќањето може да резултира со суспензија на работата. Давателот го задржува правото да наплаќа камата на доцни плаќања по максималната законска стапка дозволена со македонскиот закон, пресметана од датумот на доспеваност на фактурата. Каде Давателот набавува услуги на трети страни во ime на Клиентот (хостинг, домени, лиценци), тие трошоци се наплатуваат посебно и не се вклучени во основната надоместина.</p>
+  </section>
+
+  <section>
+    <div class="section-num">04</div>
+    <h2>Политика за поврат на средства</h2>
+    <p>Сите плаќања извршени кон Давателот се строго неповратни. Откако плаќањето ќе биде обработено и потврдено — без разлика дали во целост или како дел од кој и да е договорен аранжман — тоа плаќање нема да биде вратено на Клиентот ни под какви околности, вклучувајќи, но не ограничувајќи се на промена на мислење, откажување на проектот, незадоволство од испорачаната работа, неискористување на испораките, затворање на деловна активност или каква и да е друга причина.</p>
+    <p>Во согласност со Законот за заштита на потрошувачите на Република Северна Македонија, потрошувачите — дефинирани како физички лица кои делуваат надвор од своите трговски или деловни цели — може да имаат законски права на откажување во врска со договори склучени на далечина. Таму каде македонскиот закон изречно задолжително гарантира право на поврат за такви потрошувачи, тоа право останува на сила и оваа клаузула не го ограничува. Деловните субјекти и правните лица немаат такви законски заштитени права и се целосно обврзани со оваа клаузула за неповратност.</p>
+    <p>Давателот вложува значително време, планирање, креативен напор и технички ресурси во секој проект од моментот кога ќе биде примено плаќањето. Политиката за неповратност постои за да ги заштити легитимните деловни интереси на Давателот и да ја одрази реалноста дека обезбедените услуги се направени по мерка и не можат да бидат препродадени или преупотребени по откажувањето.</p>
+    <p>Во ретката и исклучителна околност каде Давателот е целосно неспособна да ги испорача договорените услуги поради причини кои се исклучиво во рамките на неговата контрола, Давателот може — по свое исклучиво дискреционо право — да му понуди на Клиентот кредит за идни услуги со еквивалентна вредност. Овој кредит не е преносен, нема готовинска вредност и не претставува паричен поврат.</p>
+  </section>
+
+  <section>
+    <div class="section-num">05</div>
+    <h2>Ревизии и барања за промена</h2>
+    <p>Бројот на ревизии вклучени во ангажманот ќе биде наведен во проектната понуда. Ревизиите се дефинирани како разумни прилагодувања во рамките на оригинално договорениот опфат. Тие не вклучуваат значителни промени во дизајнерската насока, додавање нови функции или страници, или барања кои претставуваат нов или проширен проект. Такви барања ќе бидат ценети одделно.</p>
+    <p>Барањата за ревизија мора да бидат поднесени во писмена, консолидирана форма во рамките на договорениот период за преглед. Откако испораката ќе биде одобрена — или изречно или имплицитно по истекот на рокот за преглед — таа ќе биде третирана како прифатена и финална. Барањата за промени по одобрувањето ќе бидат третирани и наплатувани како нова работа.</p>
+  </section>
+
+  <section>
+    <div class="section-num">06</div>
+    <h2>Интелектуална сопственост</h2>
+    <p>По приемот на целосното плаќање, сопственоста на финалните испораки ќе се пренесе на Клиентот. До тој момент, сите работни материјали остануваат исклучива сопственост на Давателот. Давателот го задржува правото да ја прикажува завршената работа во своето портфолио освен ако Клиентот не побара доверливост во писмена форма пред почетокот на проектот.</p>
+    <p>Средства на трети страни — вклучувајќи фонтови, стоки-слики, додатоци и софтверски библиотеки — остануваат предмет на нивните лиценци. Клиентот е одговорен за одржување на тие лиценци по предавањето. Клиентот гарантира дека сите материјали доставени на Давателот за употреба во проектот не ги нарушуваат правата на трети лица.</p>
+  </section>
+
+  <section>
+    <div class="section-num">07</div>
+    <h2>Одговорности и соработка на клиентот</h2>
+    <p>Клиентот се согласува да ги обезбеди сите информации, материјали, пристапни акредитиви и повратни информации во роковите наведени во проектниот договор. Клиентот е одговорен за точноста и законитоста на сите доставени материјали. Доколку грешките во финалната испорака произлезат од неточни информации доставени од Клиентот, потребните корекции ќе бидат наплатени одделно.</p>
+    <p>Каде Клиентот не ги обезбедува потребните материјали или одобренија во разумен рок, Давателот го задржува правото да ја паузира работата или — при значително доцнење — да го третира проектот како откажан со задржување на сите дотогашни плаќања. Давателот го задржува правото веднаш да раскине ангажман без поврат во случај на непрофесионално, злоупотребувачко или закануваат однесување од страна на Клиентот.</p>
+  </section>
+
+  <section>
+    <div class="section-num">08</div>
+    <h2>Ограничување на одговорноста</h2>
+    <p>Во мерка дозволена со применливото право, Давателот не е одговорен за индиректни, инцидентни, специјални или последователни штети од кој и да е вид, вклучувајќи загуба на приходи, добивка, податоци или деловни можности, кои произлегуваат од или во врска со обезбедените услуги. Давателот не гарантира постигнување на специфични деловни резултати, рангирања на пребарувачи или нивоа на сообраќај.</p>
+    <p>Вкупната кумулативна одговорност на Давателот нема да го надмине вкупниот износ платен од Клиентот за конкретниот проект. Давателот не е одговорен за прекини или грешки предизвикани од сервисите на трети страни интегрирани со испорачаниот производ.</p>
+  </section>
+
+  <section>
+    <div class="section-num">09</div>
+    <h2>Доверливост</h2>
+    <p>Двете страни признаваат дека во текот на овој Договор може да бидат изложени на доверливи информации. Секоја страна се согласува да ги заштити таквите информации со истиот степен на грижа применет кон сопствените доверливи информации и да не ги открива на трети лица без претходна писмена согласност, освен каде е потребно со закон.</p>
+  </section>
+
+  <section>
+    <div class="section-num">10</div>
+    <h2>Податоци и приватност</h2>
+    <p>Давателот собира и обработува лични податоци исклучиво за целите на испорака на услугите. Давателот не продава, изнајмува или открива лични податоци на трети страни освен каде е строго неопходно за исполнување на договорените услуги или каде е потребно со закон. Клиентот може да побара пристап, исправка или бришење на своите лични податоци со писмено контактирање на Давателот.</p>
+  </section>
+
+  <section>
+    <div class="section-num">11</div>
+    <h2>Дополнителни договори</h2>
+    <p>За одредени проекти или ангажмани, покрај овие Услови и одредби, може да бидат потребни дополнителни договори и правни инструменти. Такви документи може да вклучуваат договори за доверливост (NDA), договори за трансфер на авторски права, договори за одржување и поддршка, договори за ексклузивна соработка или кој и да е друг договор кој Давателот го смета за неопходен за соодветно уредување на ангажманот.</p>
+    <p>Давателот го задржува правото да бара потпишување на такви дополнителни документи пред почетокот на кој и да е дел од работата. Клиентот е должен да ги прочита, разбере и, каде е применливо, да побара независен правен совет пред потпишувањето. Постоењето на дополнителни договори не ги заменува или намалува кој и да е дел од овие Услови и одредби.</p>
+  </section>
+
+  <section>
+    <div class="section-num">12</div>
+    <h2>Применливо право и решавање на спорови</h2>
+    <p>Овој Договор се уредува и толкува во согласност со законите на Република Северна Македонија. Судовите на Република Северна Македонија имаат ексклузивна надлежност над сите правни постапки кои произлегуваат од овој Договор. Пред иницирање на формални правни постапки, двете страни се обврзуваат да положат добронамерен напор за решавање на спорот со директни преговори во рок од триесет (30) дена.</p>
+  </section>
+
+  <section>
+    <div class="section-num">13</div>
+    <h2>Виша сила</h2>
+    <p>Давателот не е одговорен за неуспех или доцнење во извршувањето на обврските предизвикано од причини надвор од неговата разумна контрола, вклучувајќи природни катастрофи, пандемии, владини дејствија, прекини на комуналии или прекини на услугите на трети страни. Доколку таков настан продолжи подолго од шеесет (60) дена, секоја страна може да го раскине ангажманот со писмено известување.</p>
+  </section>
+
+  <section>
+    <div class="section-num">14</div>
+    <h2>Целосен договор и разделивост</h2>
+    <p>Овој Договор, заедно со сите проектни понуди и дополнителни договори, го претставува целосниот договор помеѓу страните и ги заменува сите претходни договори во врска со истата предметна материја. Доколку некоја одредба биде прогласена за неважечка, останатите одредби остануваат на сила. Непримената на кое и да е право не претставува одрекување од тоа право.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SIGNATURES -->
+  <div class="section-num">Потписи</div>
+  <h2>Потврда и потпис</h2>
+  <p style="margin-bottom:28px;">Со потпишување на овој документ, двете страни потврдуваат дека ги прочитале, разбрале и ги прифаќаат сите Услови и одредби содржани во него.</p>
+
+  <div class="sig-block">
+    <div class="sig-party">
+      <div class="sig-party-label">Давател на услуги</div>
+      <div class="sig-row">
+        <label>Ime и презиме / Назив</label>
+        <span class="sig-line"></span>
+      </div>
+      <div class="sig-row">
+        <label>Потпис</label>
+        <span class="sig-line"></span>
+      </div>
+      <div class="sig-row">
+        <label>Датум</label>
+        <span class="sig-line"></span>
+      </div>
+      <div class="sig-row" style="margin-bottom:0;">
+        <label>Печат (доколку е применливо)</label>
+        <span class="sig-line"></span>
+      </div>
+    </div>
+    <div class="sig-party">
+      <div class="sig-party-label">Клиент / Примател на услуги</div>
+      <div class="sig-row">
+        <label>Ime и презиме / Назив</label>
+        <span class="sig-line"></span>
+      </div>
+      <div class="sig-row">
+        <label>Потпис</label>
+        <span class="sig-line"></span>
+      </div>
+      <div class="sig-row">
+        <label>Датум</label>
+        <span class="sig-line"></span>
+      </div>
+      <div class="sig-row" style="margin-bottom:0;">
+        <label>Печат (доколку е применливо)</label>
+        <span class="sig-line"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 Codeholm. Сите права задржани.</p>
+    <p><a href="https://codeholm.com">codeholm.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
